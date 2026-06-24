@@ -1,3 +1,4 @@
+/* ======== ROI CALCULATION ======== */
 function runROI() {
   const users = Number(document.getElementById("users").value);
   const cost = Number(document.getElementById("cost").value);
@@ -23,3 +24,16 @@ Net Savings: $${netSavings}
 ROI: ${roi}
   `;
 }
+
+/* ======== DARK MODE TOGGLE ======== */
+const toggleBtn = document.getElementById("themeToggle");
+
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+
+  if (document.body.classList.contains("dark")) {
+    toggleBtn.textContent = "☀️ Light Mode";
+  } else {
+    toggleBtn.textContent = "🌙 Dark Mode";
+  }
+});
