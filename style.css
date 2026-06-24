@@ -1,4 +1,52 @@
-/* ======== TWO-COLUMN LAYOUT WRAPPER ======== */
+/* ======== THEME VARIABLES ======== */
+:root {
+  --bg: #f3f6fc;
+  --card-bg: #ffffff;
+  --text: #1a1a1a;
+  --title: #004e8c;
+  --border: #e2e6ef;
+  --shadow: rgba(0, 0, 0, 0.08);
+  --shadow-hover: rgba(0, 0, 0, 0.12);
+  --button-bg: #0f6cbd;
+  --button-bg-hover: #0d5ca3;
+  --button-bg-active: #0b4c87;
+  --result-bg: #f4f8ff;
+}
+
+/* ======== DARK MODE VARIABLES ======== */
+.dark {
+  --bg: #1e1f22;
+  --card-bg: #2a2d31;
+  --text: #e6e6e6;
+  --title: #4aa3ff;
+  --border: #3a3d42;
+  --shadow: rgba(0, 0, 0, 0.4);
+  --shadow-hover: rgba(0, 0, 0, 0.55);
+  --button-bg: #4aa3ff;
+  --button-bg-hover: #1f8fff;
+  --button-bg-active: #0f6cbd;
+  --result-bg: #2f3338;
+}
+
+/* ======== APPLY THEME ======== */
+body {
+  margin: 0;
+  padding: 40px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--title);
+  margin-bottom: 30px;
+}
+
+/* ======== TWO-COLUMN LAYOUT ======== */
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -8,31 +56,108 @@
   margin: auto;
 }
 
-/* Stack columns on mobile */
+/* Mobile layout */
 @media (max-width: 900px) {
   .container {
     grid-template-columns: 1fr;
   }
 }
 
-/* ======== LEFT & RIGHT PANELS ======== */
+/* ======== PANELS ======== */
 .left-panel, .right-panel {
-  background: #ffffff;
+  background: var(--card-bg);
   padding: 28px;
   border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e2e6ef;
+  box-shadow: 0 6px 18px var(--shadow);
+  border: 1px solid var(--border);
   transition: 0.2s ease;
 }
 
 .left-panel:hover, .right-panel:hover {
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 22px var(--shadow-hover);
 }
 
-/* ======== HEADINGS ======== */
-.left-panel h2, .right-panel h2 {
+h2 {
   font-size: 22px;
   font-weight: 600;
-  color: #1a1a1a;
   margin-bottom: 15px;
+}
+
+/* ======== INPUTS ======== */
+label {
+  display: block;
+  margin-top: 14px;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 16px;
+  background: var(--card-bg);
+  color: var(--text);
+  transition: 0.2s ease;
+}
+
+input:focus {
+  border-color: var(--button-bg);
+  box-shadow: 0 0 0 3px rgba(15, 108, 189, 0.25);
+  outline: none;
+}
+
+/* ======== BUTTON ======== */
+button {
+  margin-top: 25px;
+  width: 100%;
+  padding: 14px;
+  background: var(--button-bg);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background: var(--button-bg-hover);
+}
+
+button:active {
+  background: var(--button-bg-active);
+}
+
+/* ======== RESULTS ======== */
+#output {
+  background: var(--result-bg);
+  padding: 18px;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  font-size: 16px;
+  border-left: 5px solid var(--button-bg);
+  margin-top: 15px;
+}
+
+/* ======== DARK MODE TOGGLE BUTTON ======== */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--button-bg);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--button-bg-hover);
 }
