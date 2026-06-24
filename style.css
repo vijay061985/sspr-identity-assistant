@@ -1,78 +1,81 @@
-/* Global page styling */
+/* ======== GLOBAL MICROSOFT FLUENT STYLE ======== */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f4f7fb;
   margin: 0;
   padding: 40px;
-  color: #333;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(180deg, #f3f6fc 0%, #e9eef7 100%);
+  color: #2b2b2b;
 }
 
-/* Page title */
+/* ======== PAGE TITLE ======== */
 h1 {
   text-align: center;
-  color: #0057b8;
+  font-size: 32px;
+  font-weight: 600;
+  color: #004e8c;
   margin-bottom: 30px;
 }
 
-/* Section containers */
+/* ======== CARD SECTIONS ======== */
 section {
   background: #ffffff;
-  padding: 25px;
-  margin: 20px auto;
+  padding: 28px;
+  margin: 25px auto;
   width: 90%;
-  max-width: 600px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-/* Section titles */
-h2 {
-  color: #333;
-  margin-bottom: 15px;
-}
-
-/* Labels */
-label {
-  display: block;
-  margin-top: 12px;
-  font-weight: bold;
-}
-
-/* Input fields */
-input {
-  width: 100%;
-  padding: 10px;
-  margin-top: 6px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
-  box-sizing: border-box;
-}
-
-/* Button styling */
-button {
-  margin-top: 20px;
-  width: 100%;
-  padding: 12px;
-  background: #0057b8;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 18px;
-  cursor: pointer;
+  max-width: 650px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e6ef;
   transition: 0.2s ease;
 }
 
-button:hover {
-  background: #003f87;
+section:hover {
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
 }
 
-/* Results box */
-#output {
-  background: #f0f4ff;
-  padding: 15px;
-  border-radius: 6px;
-  white-space: pre-wrap;
-  font-size: 16px;
-  border-left: 4px solid #0057b8;
+/* ======== SECTION HEADERS ======== */
+h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 15px;
 }
+
+/* ======== LABELS ======== */
+label {
+  display: block;
+  margin-top: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* ======== INPUT FIELDS ======== */
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border: 1px solid #c7cddc;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #fdfdff;
+  transition: 0.2s ease;
+}
+
+input:focus {
+  border-color: #0f6cbd;
+  box-shadow: 0 0 0 3px rgba(15, 108, 189, 0.25);
+  outline: none;
+}
+
+/* ======== BUTTON ======== */
+button {
+  margin-top: 25px;
+  width: 100%;
+  padding: 14px;
+  background: #0f6cbd;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor
