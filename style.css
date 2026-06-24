@@ -143,6 +143,19 @@ button:active {
   margin-top: 15px;
 }
 
+/* ======== AI INSIGHTS BOX ======== */
+.insights-box {
+  background: var(--card-bg);
+  border-left: 5px solid var(--button-bg);
+  padding: 16px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--shadow);
+  color: var(--text);
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
 /* ======== DARK MODE TOGGLE (BOTTOM CENTER) ======== */
 .theme-toggle {
   position: fixed;
