@@ -1,23 +1,41 @@
-<div id="app">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SSPR ROI Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
   <h1>SSPR ROI Calculator</h1>
 
   <section id="inputs">
-    <!-- user count, cost per ticket, resets per user, etc. -->
+    <h2>Input Values</h2>
+
+    <label>Number of Users</label>
+    <input id="users" type="number" />
+
+    <label>Cost per Helpdesk Ticket ($)</label>
+    <input id="cost" type="number" />
+
+    <label>Resets per User per Year</label>
+    <input id="resets" type="number" value="1.5" />
+
+    <label>Reduction Rate (%)</label>
+    <input id="reduction" type="number" value="65" />
+
+    <label>SSPR Cost per User ($)</label>
+    <input id="ssprCost" type="number" value="0" />
+
+    <button onclick="runROI()">Calculate ROI</button>
   </section>
 
   <section id="results">
-    <!-- ROI numbers -->
+    <h2>Results</h2>
+    <pre id="output"></pre>
   </section>
 
-  <section id="readiness">
-    <!-- readiness score -->
-  </section>
-
-  <section id="architecture">
-    <!-- recommended architecture -->
-  </section>
-
-  <section id="proposal">
-    <!-- summary text -->
-  </section>
-</div>
+  <script src="script.js"></script>
+</body>
+</html>
