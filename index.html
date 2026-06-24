@@ -9,6 +9,9 @@
 
 <body>
 
+  <!-- Dark Mode Toggle -->
+  <button id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
+
   <h1>SSPR ROI Calculator</h1>
 
   <div class="container">
@@ -30,19 +33,3 @@
       <input id="reduction" type="number" value="65" />
 
       <label>SSPR Cost per User ($)</label>
-      <input id="ssprCost" type="number" value="0" />
-
-      <button onclick="runROI()">Calculate ROI</button>
-    </section>
-
-    <!-- RIGHT COLUMN: RESULTS -->
-    <section class="right-panel">
-      <h2>Results</h2>
-      <pre id="output"></pre>
-    </section>
-
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
