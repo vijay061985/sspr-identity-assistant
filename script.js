@@ -24,6 +24,7 @@ Net Savings: $${netSavings}
 ROI: ${roi}
   `;
 
+  // ⭐ THIS WAS MISSING ⭐
   generateInsights(users, savings, netSavings, roi);
 }
 
@@ -67,6 +68,14 @@ function generateInsights(users, savings, netSavings, roi) {
 }
 
 /* ======== DARK MODE TOGGLE ======== */
-document.getElementById("themeToggle").addEventListener("click", () => {
+const toggleBtn = document.getElementById("themeToggle");
+
+toggleBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark");
+
+  if (document.body.classList.contains("dark")) {
+    toggleBtn.textContent = "☀️ Light Mode";
+  } else {
+    toggleBtn.textContent = "🌙 Dark Mode";
+  }
 });
