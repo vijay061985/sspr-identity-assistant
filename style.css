@@ -46,17 +46,16 @@ h1 {
   margin-bottom: 30px;
 }
 
-/* ======== TWO-COLUMN LAYOUT (FIXED WIDTH) ======== */
+/* ======== TWO-COLUMN LAYOUT ======== */
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
   width: 95%;
-  max-width: 1400px; /* FIXED: prevents overflow */
+  max-width: 1400px;
   margin: auto;
 }
 
-/* Mobile layout */
 @media (max-width: 900px) {
   .container {
     grid-template-columns: 1fr;
@@ -66,7 +65,7 @@ h1 {
 /* ======== PANELS ======== */
 .left-panel, .right-panel {
   background: var(--card-bg);
-  padding: 22px; /* FIXED: reduced padding */
+  padding: 22px;
   border-radius: 12px;
   box-shadow: 0 6px 18px var(--shadow);
   border: 1px solid var(--border);
@@ -92,8 +91,8 @@ label {
 
 input {
   width: 100%;
-  max-width: 100%; /* FIXED: prevents overflow */
-  box-sizing: border-box; /* FIXED */
+  max-width: 100%;
+  box-sizing: border-box;
   padding: 12px;
   margin-top: 6px;
   border: 1px solid var(--border);
@@ -144,20 +143,22 @@ button:active {
   margin-top: 15px;
 }
 
-/* ======== DARK MODE TOGGLE BUTTON ======== */
+/* ======== DARK MODE TOGGLE (BOTTOM CENTER) ======== */
 .theme-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   background: var(--button-bg);
   color: white;
   border: none;
-  padding: 10px 16px;
+  padding: 12px 18px;
   border-radius: 8px;
   cursor: pointer;
   font-size: 15px;
   font-weight: 600;
   transition: 0.2s ease;
+  z-index: 999;
 }
 
 .theme-toggle:hover {
