@@ -1,52 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SSPR ROI Calculator</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+/* ======== ROI CALCULATION ======== */
+function runROI() {
+  const users = Number(document.getElementById("users").value);
+  const cost = Number(document.getElementById("cost").value);
+  const resets = Number(document.getElementById("resets").value);
+  const reduction = Number(document.getElementById("reduction").value) / 100;
+  const ssprCost = Number(document.getElementById("ssprCost").value);
 
-<body>
+  const tickets = users * resets;
+  const costBefore = tickets * cost;
+  const ticketsSaved = tickets * reduction;
+  const savings = ticketsSaved * cost;
+  const totalCost = users * ssprCost;
+  const netSavings = savings - totalCost;
+  const roi = totalCost === 0 ? "Infinite" : (netSavings / totalCost).toFixed(2);
 
-  <h1>SSPR ROI Calculator</h1>
+  document.getElementById("output").textContent = `
+Tickets per Year: ${tickets}
+Cost Before SSPR: $${costBefore}
+Tickets Eliminated: ${ticketsSaved}
+Annual Savings: $${savings}
+SSPR Cost: $${totalCost}
+Net Savings: $${netSavings}
+ROI: ${roi}
+  `;
+}
 
-  <div class="container">
+/* ======== DARK MODE TOGGLE ======== */
+const toggleBtn = document.getElementById("themeToggle");
 
-    <!-- LEFT COLUMN: INPUTS -->
-    <section class="left-panel">
-      <h2>Input Values</h2>
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
 
-      <label>Number of Users</label>
-      <input id="users" type="number" />
-
-      <label>Cost per Helpdesk Ticket ($)</label>
-      <input id="cost" type="number" />
-
-      <label>Resets per User per Year</label>
-      <input id="resets" type="number" value="1.5" />
-
-      <label>Reduction Rate (%)</label>
-      <input id="reduction" type="number" value="65" />
-
-      <label>SSPR Cost per User ($)</label>
-      <input id="ssprCost" type="number" value="0" />
-
-      <button onclick="runROI()">Calculate ROI</button>
-    </section>
-
-    <!-- RIGHT COLUMN: RESULTS -->
-    <section class="right-panel">
-      <h2>Results</h2>
-      <pre id="output"></pre>
-    </section>
-
-  </div>
-
-  <script src="script.js"></script>
-
-  <!-- DARK MODE TOGGLE AT BOTTOM CENTER -->
-  <button id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
-
-</body>
-</html>
+  if (document.body.classList.contains("dark")) {
+    toggleBtn.textContent = "☀️ Light Mode";
+  } else {
+    toggleBtn.textContent = "🌙 Dark Mode";
+  }
+});
