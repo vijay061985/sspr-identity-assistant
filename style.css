@@ -46,31 +46,27 @@ h1 {
   margin-bottom: 30px;
 }
 
-/* ======== TWO-COLUMN LAYOUT ======== */
+/* ======== TWO-COLUMN LAYOUT (FIXED WIDTH) ======== */
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
   width: 95%;
-  max-width: 1400px;
+  max-width: 1400px; /* FIXED: prevents overflow */
   margin: auto;
 }
 
-.left-panel, .right-panel {
-  padding: 22px;
+/* Mobile layout */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
 }
-
-input {
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
 
 /* ======== PANELS ======== */
 .left-panel, .right-panel {
   background: var(--card-bg);
-  padding: 28px;
+  padding: 22px; /* FIXED: reduced padding */
   border-radius: 12px;
   box-shadow: 0 6px 18px var(--shadow);
   border: 1px solid var(--border);
@@ -96,6 +92,8 @@ label {
 
 input {
   width: 100%;
+  max-width: 100%; /* FIXED: prevents overflow */
+  box-sizing: border-box; /* FIXED */
   padding: 12px;
   margin-top: 6px;
   border: 1px solid var(--border);
