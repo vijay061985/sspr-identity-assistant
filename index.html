@@ -8,33 +8,40 @@
 </head>
 
 <body>
+
   <h1>SSPR ROI Calculator</h1>
 
-  <section id="inputs">
-    <h2>Input Values</h2>
+  <div class="container">
 
-    <label>Number of Users</label>
-    <input id="users" type="number" />
+    <!-- LEFT COLUMN: INPUTS -->
+    <section class="left-panel">
+      <h2>Input Values</h2>
 
-    <label>Cost per Helpdesk Ticket ($)</label>
-    <input id="cost" type="number" />
+      <label>Number of Users</label>
+      <input id="users" type="number" />
 
-    <label>Resets per User per Year</label>
-    <input id="resets" type="number" value="1.5" />
+      <label>Cost per Helpdesk Ticket ($)</label>
+      <input id="cost" type="number" />
 
-    <label>Reduction Rate (%)</label>
-    <input id="reduction" type="number" value="65" />
+      <label>Resets per User per Year</label>
+      <input id="resets" type="number" value="1.5" />
 
-    <label>SSPR Cost per User ($)</label>
-    <input id="ssprCost" type="number" value="0" />
+      <label>Reduction Rate (%)</label>
+      <input id="reduction" type="number" value="65" />
 
-    <button onclick="runROI()">Calculate ROI</button>
-  </section>
+      <label>SSPR Cost per User ($)</label>
+      <input id="ssprCost" type="number" value="0" />
 
-  <section id="results">
-    <h2>Results</h2>
-    <pre id="output"></pre>
-  </section>
+      <button onclick="runROI()">Calculate ROI</button>
+    </section>
+
+    <!-- RIGHT COLUMN: RESULTS -->
+    <section class="right-panel">
+      <h2>Results</h2>
+      <pre id="output"></pre>
+    </section>
+
+  </div>
 
   <script src="script.js"></script>
 </body>
